@@ -13,6 +13,8 @@ Mica is to be used with `Agate <http://www.obiba.org/pages/products/agate/>`_, t
    :maxdepth: 1
 
    introduction
+   documents
+   publication-flow
 
 .. toctree::
    :maxdepth: 1
