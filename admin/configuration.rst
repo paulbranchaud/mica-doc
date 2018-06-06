@@ -1,13 +1,10 @@
 Configuration
 =============
 
-Servers
--------
-
 The file **MICA_HOME/conf/application.yml** is to be edited to match your server needs. This file is written in YAML format allowing to specify a hierarchy within the configuration keys. The YAML format uses indentations to express the different levels of this hierarchy. The file is already pre-filled with default values (to be modified to match your configuration), just be aware that you should not modify the indentations. In the following documentation, the configuration keys will be presented using the dot-notation (levels are separated by dots) for readability.
 
 HTTP Server Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Mica server is a web application and as such, you need to specify on which ports the web server should listen to incoming requests.
 
@@ -20,7 +17,7 @@ Property        Description
 =============== ==================
 
 MongoDB Server Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 Mica server will store its data (system configuration, networks, studies, datasets, etc.) in a MongoDB database. You must specify how to connect to this database.
 
@@ -78,7 +75,7 @@ Here is the required configuration snippet in **/etc/mica/application.yml** for 
   Mica requires either **clusterMonitor** or **readAnyDatabase** role on the *admin* database for validation operations. The first role is useful for a cluster setup and the latter if your MongoDB is on a single server.
 
 Opal Server Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Mica server uses Opal to retrieve data dictionaries, data summaries and variable taxonomies. This server is sometimes referred as the Opal primary server (secondary servers can be defined at study level). If you want to publish datasets, the following Opal connection details needs to be configured.
 
@@ -93,7 +90,7 @@ Property          Description
 Mica server should connect to Opal and access to some selected tables only with the lowest level of permissions (View dictionary and summary, i.e. no access to individual data). Please refer to the Opal Table Documentation for more details about the permissions that can be applied on a table.
 
 Agate Server Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Mica server uses Agate as a user directory and as a notification emails service. From the Agate point of view, Mica is not a user: it is an application. Each time Mica needs a service from Agate, it will provide the information necessary to its identification. The application credentials registered in Agate are to be specified in this section. If you want to specify advanced permissions or allow users to submit data access requests, the following Agate connection details needs to be configured.
 
@@ -106,7 +103,7 @@ Property                   Description
 ========================== ================================================================
 
 Shiro Configuration
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 `Shiro <http://shiro.apache.org/>`_ is the authentication and authorization framework used by Mica. There is a minimum advanced configuration that can be applied to specify how Shiro will hash the password. In practice this only applies to the users defined in the shiro.ini file. Default configuration is usually enough.
 
@@ -118,7 +115,7 @@ Property                            Description
 =================================== ================================
 
 Elasticsearch Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 Mica server embeds `Elasticsearch <https://www.elastic.co/>`_ as its search engine. Elasticsearch is a key functionality of Mica as the process of publication consist in indexing documents (networks, studies, variables etc.) in the search engine. Advanced queries can be applied on the published documents. Elasticsearch is embeded, i.e. it is not an external application. Mica's Elasticsearch can be part of a cluster of Elasticsearch cluster. The configuration of the Elasticsearch node and how it should connect to the other nodes of the cluster can be specified in this section. Default configuration is usually enough.
 
