@@ -1,11 +1,13 @@
 Publication Flow
 ================
 
-Documents (and their associated files) are all publishable documents (except Data Access Requests). Being a publishable document means that there can be different revisions of the document before being published.
+:doc:`documents` (and their associated files) are all publishable documents (except :ref:`data-access-requests`). Being a publishable document means that there can be different revisions of the document before being published.
 
-The publication flow refers to the work flow from a draft document to its publication. The following diagram represent the life cycle of a document with its Revision Status and Transitions:
+The publication flow refers to the work flow from a draft document to its publication. The following diagram represent the life cycle of a document with its :ref:`revision-status` and :ref:`transitions`:
 
 .. image:: images/mica-publication-flow.png
+
+.. _revision-status:
 
 Revision Status
 ---------------
@@ -39,7 +41,7 @@ The revision status is an enumeration of named states:
 |                  | | un-published at any time.                                          |                             |                             |                             |                |                |
 +------------------+----------------------------------------------------------------------+-----------------------------+-----------------------------+-----------------------------+----------------+----------------+
 
-
+.. _transitions:
 
 Transitions
 -----------

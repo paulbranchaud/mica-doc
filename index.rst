@@ -20,38 +20,17 @@ Mica is to be used with `Agate <http://www.obiba.org/pages/products/agate/>`_, t
    :maxdepth: 1
    :caption: Administrator Guide
 
-   installation
-   configuration
+   admin/installation
+   admin/configuration
 
 .. toctree::
    :maxdepth: 1
    :caption: Web User Guide
 
    web-user-guide/index
-   web-user-guide/users
-   web-user-guide/groups
-   web-user-guide/applications
-   web-user-guide/tickets
-   web-user-guide/administration
 
 .. toctree::
    :maxdepth: 1
    :caption: Python User Guide
 
    python-user-guide/index
-   python-user-guide/add-user
-   python-user-guide/delete-user
-   python-user-guide/add-group
-   python-user-guide/delete-group
-   python-user-guide/add-application
-   python-user-guide/delete-application
-   python-user-guide/rest
-
-.. toctree::
-   :maxdepth: 1
-   :caption: OAuth2 API
-
-   oauth2-api/index
-   oauth2-api/authorization-code-grant-flow
-   oauth2-api/resource-owner-password-credentials-grant-flow
-   oauth2-api/openid-connect-flow

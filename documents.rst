@@ -1,14 +1,12 @@
 Documents
 =========
 
+Mica handles several type of documents, specific to the epidemiological studies domain: network, study, datasets etc. These document types have their own internal structure (to allow relationships between them and to ensure basic search), but can also be extended with custom fields. The default set of fields is the one promoted by `Maelstrom Research <https://maelstrom-research.org>`_. This default description model should fit with your needs in most of the cases.
+
+All the documents follow the :doc:`publication-flow` except the :ref:`data-access-requests` (which is a form privately exchanged between a researcher and the study/consortium).
+
 Types
 -----
-
-Mica handles several type of documents, specific to the epidemiological studies domain: network, study, datasets etc. These document types have their own internal structure (to allow relationships between them and to ensure basic search), but can also be extended with custom fields. The default set of fields is the one promoted by Maelstrom Research. This default description model should fit with your needs in most of the cases.
-
-All the documents follow the Publication Flow except the Data Access Requests (which is a form privately exchanged between a researcher and the study/consortium).
-
-When a user tries to sign-in an application X, this application delegates the user authentication to Agate. If successful, a ticket is created in Agate (to track user activity) and user session local to the application X is created. This local user session allows the application to not query Agate each time user authorization check is requested.
 
 Network
 ~~~~~~~
@@ -69,6 +67,8 @@ Research Project
 ~~~~~~~~~~~~~~~~
 
 A research project reports information about the work that was conducted thanks to the network/study data: research objectives and results, contact information, status timeline. It could be somehow related to a data access request but not necessarily.
+
+.. _data-access-requests:
 
 Data Access Request
 ~~~~~~~~~~~~~~~~~~~
