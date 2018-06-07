@@ -25,9 +25,9 @@ Because having a search engine is an absolute requirement, Mica server will chec
 Manual Installation
 ~~~~~~~~~~~~~~~~~~~
 
-Available plugins can be downloaded from `OBiBa Plugins Repository <http://obiba.org/pages/plugins>`_. The manual installation procedure should be performed as follow:
+Available plugins can be downloaded from `OBiBa Plugins Repository <http://obiba.org/pages/plugins/>`_. The manual installation procedure should be performed as follow:
 
-* Download the plugin of interest (zip file) from `OBiBa Plugins Repository <http://obiba.org/pages/plugins>`_,
+* Download the plugin of interest (zip file) from `OBiBa Plugins Repository <http://obiba.org/pages/plugins/>`_,
 * Unzip plugin package in **MICA_HOME/plugins** folder. Note that the plugin folder name does not matter, Mica will discover the plugin through the plugin.properties file that is expected to be found in the plugin folder.
 * Read the installation instructions (if any) of the plugin to identify the system dependencies or any other information,
 * Restart Mica.
