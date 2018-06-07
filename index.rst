@@ -35,3 +35,12 @@ Mica is to be used with `Agate <http://www.obiba.org/pages/products/agate/>`_, t
    :caption: Python User Guide
 
    python-user-guide/index
+   python-user-guide/document-access
+   python-user-guide/file-access
+   python-user-guide/document-permission
+   python-user-guide/update-collected-dataset
+   python-user-guide/update-collected-datasets
+   python-user-guide/file
+   python-user-guide/search
+   python-user-guide/import-zip
+   python-user-guide/rest
