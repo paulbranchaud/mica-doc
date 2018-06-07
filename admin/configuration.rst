@@ -89,17 +89,17 @@ Property          Description
 
 Mica server should connect to Opal and access to some selected tables only with the lowest level of permissions (View dictionary and summary, i.e. no access to individual data). Please refer to the Opal Table Documentation for more details about the permissions that can be applied on a table.
 
-Agate Server Configuration
+Mica Server Configuration
 --------------------------
 
-Mica server uses Agate as a user directory and as a notification emails service. From the Agate point of view, Mica is not a user: it is an application. Each time Mica needs a service from Agate, it will provide the information necessary to its identification. The application credentials registered in Agate are to be specified in this section. If you want to specify advanced permissions or allow users to submit data access requests, the following Agate connection details needs to be configured.
+Mica server uses Mica as a user directory and as a notification emails service. From the Mica point of view, Mica is not a user: it is an application. Each time Mica needs a service from Mica, it will provide the information necessary to its identification. The application credentials registered in Mica are to be specified in this section. If you want to specify advanced permissions or allow users to submit data access requests, the following Mica connection details needs to be configured.
 
 ========================== ================================================================
 Property                   Description
 ========================== ================================================================
-``agate.url``              Agate server URL. It is highly recommended to use https protocol.
-``agate.application.name`` Application name for connection to Agate server.
-``agate.application.key``  Application key for connection to Agate server.
+``agate.url``              Mica server URL. It is highly recommended to use https protocol.
+``agate.application.name`` Application name for connection to Mica server.
+``agate.application.key``  Application key for connection to Mica server.
 ========================== ================================================================
 
 Shiro Configuration
@@ -168,6 +168,79 @@ Mica uses the scripting capabilities of Elasticsearch. All the machines in the E
   script:
     inline: true
     indexed: true
+
+User Directories
+----------------
+
+The security framework that is used by Mica for authentication, authorization etc. is `Shiro <http://shiro.apache.org/>`_. Configuring Shiro for Mica is done via the file **MICA_HOME/conf/shiro.ini**. See also `Shiro ini file documentation <http://cwiki.apache.org/confluence/display/SHIRO/Configuration#Configuration-INISections>`_.
+
+.. note::
+
+  Default configuration is a static user 'administrator' with password 'password' (or the one provided while installing Mica Debian/RPM package).
+
+By default Mica server has several built-in user directories (in the world of Shiro, a user directory is called a realm):
+
+* a file-based user directory (**shiro.ini** file),
+* the user directory provided by Agate.
+
+Although it is possible to register some additional user directories, this practice is not recommended as Agate provides more than a service of authentication (user profile, notification emails etc.).
+
+In the world of Shiro, a user directory is called a *realm*.
+
+**File Based User Directory**
+
+The file-based user directory configuration file **MICA_HOME/conf/shiro.ini**.
+
+.. note::
+
+  It is not recommended to use this file-based user directory. It is mainly dedicated to define a default system super-user and a password for the anonymous user.
+
+For a better security, user passwords are encrypted with a one way hash such as sha256.
+
+The example shiro.ini file below demonstrates how encryption is configured.
+
+.. code-block:: bash
+
+  # =======================
+  # Shiro INI configuration
+  # =======================
+
+  [main]
+  # Objects and their properties are defined here,
+  # Such as the securityManager, Realms and anything else needed to build the SecurityManager
+
+
+  [users]
+  # The 'users' section is for simple deployments
+  # when you only need a small number of statically-defined set of User accounts.
+  #
+  # Password here must be encrypted!
+  # Use shiro-hasher tools to encrypt your passwords:
+  #   DEBIAN:
+  #     cd /usr/share/mica2/tools && ./shiro-hasher -p
+  #   UNIX:
+  #     cd <MICA_DIST_HOME>/tools && ./shiro-hasher -p
+  #   WINDOWS:
+  #     cd <MICA_DIST_HOME>/tools && shiro-hasher.bat -p
+  #
+  # Format is:
+  # username=password[,role]*
+  administrator = $shiro1$SHA-256$500000$dxucP0IgyO99rdL0Ltj1Qg==$qssS60kTC7TqE61/JFrX/OEk0jsZbYXjiGhR7/t+XNY=,mica-administrator
+  anonymous = $shiro1$SHA-256$500000$dxucP0IgyO99rdL0Ltj1Qg==$qssS60kTC7TqE61/JFrX/OEk0jsZbYXjiGhR7/t+XNY=
+
+  [roles]
+  # The 'roles' section is for simple deployments
+  # when you only need a small number of statically-defined roles.
+  # Format is:
+  # role=permission[,permission]*
+  mica-administrator = *
+
+Passwords must be encrypted using shiro-hasher tools (included in Mica tools directory):
+
+.. code-block:: bash
+
+  cd /usr/share/mica2/tools
+  ./shiro-hasher -p
 
 Reverse Proxy Configuration
 ---------------------------
