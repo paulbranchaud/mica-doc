@@ -35,8 +35,6 @@ Mica is to be used with `Agate <http://www.obiba.org/pages/products/agate/>`_, t
    :caption: Drupal User Guide
 
    drupal-user-guide/index
-   drupal-user-guide/installation
-
 
 .. toctree::
    :maxdepth: 1
