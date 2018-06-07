@@ -63,6 +63,6 @@ Inside the plugin's folder, a properties file, plugin.properties, has two sectio
 Still in the plugin's folder, a site-specific properties file, site.properties, is to be used for defining the local configuration of the plugin. Note that this file will be copied when upgrading the plugin.
 
 Backups
-=======
+-------
 
 Mica assigns a data folder location to the plugin: **MICA_HOME/data/<plugin-name>** where plugin-name is the name defined in the plugin.properties file. This folder is then the one to be backed-up.
