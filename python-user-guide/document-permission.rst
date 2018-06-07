@@ -13,7 +13,7 @@ Arguments
 ============ ===========
 Argument     Description
 ============ ===========
-``DOCUMENT`` Mica document: network, individual-study, harmonization-study, collected-dataset, harmonized-dataset
+``DOCUMENT`` Mica document: ``network``, ``individual-study``, ``harmonization-study``, ``collected-dataset``, ``harmonized-dataset`` (see :doc:`../documents`)
 ``ID``       Identifier of the document
 ============ ===========
 
