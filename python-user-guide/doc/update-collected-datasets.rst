@@ -16,6 +16,18 @@ Argument     Description
 ``ID``       A `regular expression <https://docs.python.org/2/library/re.html>`_ to filter the collected dataset identifiers.
 ============ ===========
 
+Options
+-------
+
+================================================= ====================================
+Option                                            Description
+================================================= ====================================
+``--project PROJECT, -prj PROJECT``               The associated Opal project.
+``--dry DRY, -d DRY``                             Dry run of the command to list the collected datasets matching the regular expression.
+``--publish, -pu``                                Publish the collected datasets.
+``--unpublish, -un``                              Unpublish the collected datasets.
+================================================= ====================================
+
 Credentials
 -----------
 
@@ -28,18 +40,6 @@ Option                               Description
 ``--user USER, -u USER``             User name. User with appropriate permissions is expected depending of the REST resource requested.
 ``--password PASSWORD, -p PASSWORD`` User password.
 ==================================== ====================================
-
-Options
--------
-
-================================================= ====================================
-Option                                            Description
-================================================= ====================================
-``--project PROJECT, -prj PROJECT``               The associated Opal project.
-``--dry DRY, -d DRY``                             Dry run of the command to list the collected datasets matching the regular expression.
-``--publish, -pu``                                Publish the collected datasets.
-``--unpublish, -un``                              Unpublish the collected datasets.
-================================================= ====================================
 
 Extras
 ------

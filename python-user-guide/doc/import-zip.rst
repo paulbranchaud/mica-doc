@@ -39,19 +39,6 @@ Argument     Description
 ``PATH``     Path to the zip file or directory that contains zip files to be imported.
 ============ ===========
 
-Credentials
------------
-
-Authentication is done by username/password credentials.
-
-==================================== ====================================
-Option                               Description
-==================================== ====================================
-``--mica MICA, -mk MICA``            Mica server base url.
-``--user USER, -u USER``             User name. User with appropriate permissions is expected depending of the REST resource requested.
-``--password PASSWORD, -p PASSWORD`` User password.
-==================================== ====================================
-
 Options
 -------
 
@@ -64,6 +51,19 @@ Option                                            Description
 ``--subject, -s``                                 Subject name to which the access will be granted
 ``--type TYPE, -ty TYPE``                         Subject type: ``user`` or ``group``
 ================================================= ====================================
+
+Credentials
+-----------
+
+Authentication is done by username/password credentials.
+
+==================================== ====================================
+Option                               Description
+==================================== ====================================
+``--mica MICA, -mk MICA``            Mica server base url.
+``--user USER, -u USER``             User name. User with appropriate permissions is expected depending of the REST resource requested.
+``--password PASSWORD, -p PASSWORD`` User password.
+==================================== ====================================
 
 Extras
 ------

@@ -16,19 +16,6 @@ Argument     Description
 ``ID``       The collected dataset identifier
 ============ ===========
 
-Credentials
------------
-
-Authentication is done by username/password credentials.
-
-==================================== ====================================
-Option                               Description
-==================================== ====================================
-``--mica MICA, -mk MICA``            Mica server base url.
-``--user USER, -u USER``             User name. User with appropriate permissions is expected depending of the REST resource requested.
-``--password PASSWORD, -p PASSWORD`` User password.
-==================================== ====================================
-
 Options
 -------
 
@@ -43,6 +30,19 @@ Option                                            Description
 ``--publish, -pu``                                Publish the collected dataset.
 ``--unpublish, -un``                              Unpublish the collected dataset.
 ================================================= ====================================
+
+Credentials
+-----------
+
+Authentication is done by username/password credentials.
+
+==================================== ====================================
+Option                               Description
+==================================== ====================================
+``--mica MICA, -mk MICA``            Mica server base url.
+``--user USER, -u USER``             User name. User with appropriate permissions is expected depending of the REST resource requested.
+``--password PASSWORD, -p PASSWORD`` User password.
+==================================== ====================================
 
 Extras
 ------

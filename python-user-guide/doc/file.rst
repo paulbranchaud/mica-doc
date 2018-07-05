@@ -16,19 +16,6 @@ Argument Description
 ``PATH`` Path of file or folder in the file system, for instance: /study/foo
 ======== ===========
 
-Credentials
------------
-
-Authentication is done by username/password credentials.
-
-==================================== ====================================
-Option                               Description
-==================================== ====================================
-``--mica MICA, -mk MICA``            Mica server base url.
-``--user USER, -u USER``             User name. User with appropriate permissions is expected depending of the REST resource requested.
-``--password PASSWORD, -p PASSWORD`` User password.
-==================================== ====================================
-
 Options
 -------
 
@@ -46,6 +33,19 @@ Option                                            Description
 ``--publish, -pu``                                Publish a file, requires the file to be in UNDER_REVIEW state.
 ``--unpublish, -un``                              Unpublish a file.
 ================================================= ====================================
+
+Credentials
+-----------
+
+Authentication is done by username/password credentials.
+
+==================================== ====================================
+Option                               Description
+==================================== ====================================
+``--mica MICA, -mk MICA``            Mica server base url.
+``--user USER, -u USER``             User name. User with appropriate permissions is expected depending of the REST resource requested.
+``--password PASSWORD, -p PASSWORD`` User password.
+==================================== ====================================
 
 Extras
 ------

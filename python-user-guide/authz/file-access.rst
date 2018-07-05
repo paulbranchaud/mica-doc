@@ -16,6 +16,18 @@ Argument     Description
 ``PATH``     Path to the file in the Mica file system
 ============ ===========
 
+Options
+-------
+
+================================================= ====================================
+Option                                            Description
+================================================= ====================================
+``--add, -a``                                     Add an access
+``--delete, -d``                                  Delete an access
+``--subject, -s``                                 Subject name to which the access will be granted
+``--type TYPE, -ty TYPE``                         Subject type: ``user`` or ``group``
+================================================= ====================================
+
 Credentials
 -----------
 
@@ -28,18 +40,6 @@ Option                               Description
 ``--user USER, -u USER``             User name. User with appropriate permissions is expected depending of the REST resource requested.
 ``--password PASSWORD, -p PASSWORD`` User password.
 ==================================== ====================================
-
-Options
--------
-
-================================================= ====================================
-Option                                            Description
-================================================= ====================================
-``--add, -a``                                     Add an access
-``--delete, -d``                                  Delete an access
-``--subject, -s``                                 Subject name to which the access will be granted
-``--type TYPE, -ty TYPE``                         Subject type: ``user`` or ``group``
-================================================= ====================================
 
 Extras
 ------
