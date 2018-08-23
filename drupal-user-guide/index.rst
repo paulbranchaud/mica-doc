@@ -70,6 +70,8 @@ Install Drush via Composer tool:
   # Install Drush and add composer installation directory to your execution path
   composer global require drush/drush:7.*
   echo "export PATH=\$HOME/.composer/vendor/bin:\$PATH" | tee -a $HOME/.bashrc
+  # For CentOS 7 you have to use : 
+  echo "export PATH=\$HOME/.config/composer/vendor/bin:\$PATH" | tee -a $HOME/.bashrc
   source .bashrc
 
   # Verify Drush install
