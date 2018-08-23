@@ -172,7 +172,7 @@ These extra steps are needed to have a functional drupal on CentOS:
 
 * Go to http://localhost/drupal/#overlay=admin/config/search/clean-urls
 * Check "Enable clean URLs" and save.
-* Due to an incompatibility of ssl, you need to set mica url and agate url without ssl. To do this :
+* Due to an incompatibility with a nonvalid ssl certificate in CentOS, you need to set mica url and agate url without ssl. To do this :
 
   - Go to http://localhost/drupal/admin/config/obiba-agate/agate-settings
   - Replace Agate address with : http://localhost:8081
