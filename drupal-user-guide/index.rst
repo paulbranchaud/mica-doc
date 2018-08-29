@@ -160,14 +160,23 @@ Once `Drupal is installed <https://www.drupal.org/documentation/install>`_ on yo
   # Apply some folder permissions
   chown apache\: ./sites/default/files/composer/
 
-These extra steps are needed to have a functional drupal on CentOS:
+To enable the mode_rewrite on Debian:
 
-* Activate mod_rewrite in drupal: add at the end of the file "/etc/httpd/conf/httpd.conf"
+.. code-block:: bash
+
+  sudo a2enmod rewrite
+  sudo service apache2 restart
+  
+On CentOS the rewrite_mode is enabled by default.
+
+* Make sure that the apache config on Debian and CentOS allow overriding via .htaccess, to do so make sure the apache config file has the following directive:
 
 .. code-block:: bash
 
   <Directory "/var/www/html">
+  ...
   AllowOverride All
+  ...
   </Directory>
 
 * Go to http://localhost/drupal/#overlay=admin/config/search/clean-urls
