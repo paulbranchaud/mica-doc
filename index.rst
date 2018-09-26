@@ -33,6 +33,7 @@ Mica is to be used with `Agate <http://www.obiba.org/pages/products/agate/>`_, t
    :caption: Web User Guide
 
    web-user-guide/index
+   web-user-guide/documents-management
    web-user-guide/data-access-request
 
 .. toctree::
