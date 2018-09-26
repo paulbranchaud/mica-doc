@@ -29,11 +29,12 @@ Mica is to be used with `Agate <http://www.obiba.org/pages/products/agate/>`_, t
    admin/plugins
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Web User Guide
 
    web-user-guide/index
    web-user-guide/documents-management
+   web-user-guide/admin/index
    web-user-guide/data-access-request
 
 .. toctree::
