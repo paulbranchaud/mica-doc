@@ -4,10 +4,14 @@ Drupal Configuration
 Drupal is turned into Mica Drupal Client via a set of Drupal modules that can be enabled/disabled in the Modules > OBiBa subsection of Drupal.
 
 .. note::
-  If you decide to disable one of OBiBa Drupal module, make sure you know exactly what it does. As a general rule, all modules should be enabled in order to make Mica Client works. There are, however, two notable exceptions to this rule:
+  If you decide to disable one of OBiBa Drupal module make sure you know exactly what it does, disabling an important module can render Mica Client unusable.
 
-  You may disable both the "Data Access Request" and the "OBiBa Auth" modules in the case you don't intend to use the Data Access Request feature provided by Mica.
-  Not an OBiBa module per se, but one which Mica Client use extensively is the Google Chart module (in the Chart section). If you intend to use Highcharts in your portal, you may want to activate the module there and disable the Google Chart modules.
+The following modules can be considered as extensions and disabling them does not affect the core functionality of Mica Client:
+
+- Obiba Mica Data Access
+- Obiba Mica Analysis
+- Obiba Mica Research Project
+- Obiba Mica Sets
 
 OBiBa Mica settings
 -------------------
