@@ -101,6 +101,95 @@ Zip Distribution Upgrade
 
 Follow the Installation of Mica Zip distribution above but make sure you don't overwrite your mica-home directory.
 
+
+Upgrading to Mica 2.x
+~~~~~~~~~~~~~~~~~~~~~
+
+Mica 2.x is a major upgrade. Upgrade will affect the configuration files and database access.
+
+.. warning::
+  As a general rule, always backup the configuration files and the databases before upgrading. Make sure also you can restore them!
+
+.. warning::
+  To migrate to Mica 2.x, you need to have Mica >= 1.2.0
+
+Mongodb access
+++++++++++++++
+
+For an automatic migration, Mica requires a user with full access to MongoDB. Make sure to create the role below and assign it to ``micaadmin``:
+
+.. code-block:: javascript
+
+  use admin
+  db.createRole({
+    role: 'obibauser',
+    privileges:[{
+      resource: {anyResource: true},
+      actions: ['anyAction']
+    }],
+    roles: []
+  });
+
+  db.grantRolesToUser(
+    "micaadmin",
+    [ {role: "obibauser", db: "admin"} ]
+  );
+
+Mica configuration file
++++++++++++++++++++++++
+
+Some configurations changed in file ``/etc/mica2/application.yml``
+
+Configurations with prefix "mongodb." are useless, you can delete them. Now, we need the property "spring.data.mongodb.uri". Exemple for the above user:
+
+.. code-block:: properties
+
+  spring:
+    data:
+      mongodb:
+        uri:
+          mongodb://micaadmin:micaadmin@localhost:27017/mica?authSource=admin
+
+
+Upgrading to Mica 3.x
+~~~~~~~~~~~~~~~~~~~~~
+
+This is a major upgrade consisting of several model changes and the addition of the new Harmonization Study document.
+
+.. warning::
+
+  To migrate to Mica 3.x, you need to first install 2.2.3, run the server once before you install the 3.x version.
+
+In addition, the following taxonomy changes can affect the current installations. Before upgrading to Mica 3.x and to prevent conflicts or loss of
+data make sure your taxonomy vocabularies do not match the following:
+
+New Study taxonomy vocabularies:
+
+* className: denoting the type of study document (Individual or Harmonization)
+* harmonizationDesign
+* populations-id
+* populations-name
+* populations-description
+* populations-dataCollectionEvents-id
+* populations-dataCollectionEvents-name
+* populations-dataCollectionEvents-start
+* populations-dataCollectionEvents-end
+* populations-dataCollectionEvents-description
+
+New variable taxonomy vocabularies:
+
+* studyId
+* populationId
+* dceId
+
+After upgrading to Mica 3.0 make sure to clear all cache and re-index all documents in the administration module of the Mica server.
+
+.. note::
+
+  A possible safeguard against taxonomy conflicts is to prefix custom vocabulary keys (omitting '.') so future updates do not override
+  them.
+
+
 Execution
 ---------
 
