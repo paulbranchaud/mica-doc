@@ -46,19 +46,13 @@ The example below creates the *micaadmin* user for *mica* database:
 
   use admin
 
-  db.createRole({
-    role: 'obibauser',
-    privileges:[{
-        resource: {anyResource: true},
-        actions: ['anyAction']
-    }],
-    roles: []
-  });
-
-  db.createUser({
-    user: "micaadmin",
-    pwd: "micaadmin",
-    roles: ['obibauser']
+  db.createUser( {
+    user: "micaadmin", pwd: "micaadmin",
+    roles: [
+         { "role" : "readWrite", "db" : "mica" },
+         { "role" : "dbAdmin", "db" : "mica" },
+         { "role" : "readAnyDatabase", "db": "admin" }
+    ]
   });
 
 Here is the required configuration snippet in **/etc/mica/application.yml** for the above user:
